@@ -14,13 +14,6 @@
     </url>
 
     <url>
-        <loc>https://yeony1.github.io/categories/Dev/</loc>
-        <lastmod>2018-04-09T08:15:56.773Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://yeony1.github.io/categories/Dev/Git/</loc>
         <lastmod>2018-04-09T08:15:56.773Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -37,6 +30,20 @@
     <url>
         <loc>https://yeony1.github.io/categories/Life/Book/</loc>
         <lastmod>2018-04-09T08:15:56.786Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://yeony1.github.io/categories/Dev/</loc>
+        <lastmod>2018-04-19T12:55:46.729Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://yeony1.github.io/categories/Dev/javaScript/</loc>
+        <lastmod>2018-04-19T12:55:46.729Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
