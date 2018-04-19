@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Git이란? | Yeony</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="git">
+    
+    <meta name="description" content="# Git?  만든이 : 리눅스의 아버지 리누스 토발즈 프로그램 등의 소스코드 관리를 위한 분산 버전 관리 시스템  # 버전관리란?  VCS (Version Control System) : 버전을 관리하는 시스템 버전관리를 왜 해야 할까? 변경/수정 내용 관리 각 파일을 이전 상태로 복구 가능 시간에 따른 수정 내용 비교 가능 누가 언제 만든 코드인지 파악">
+<meta name="keywords" content="git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git이란?">
+<meta property="og:url" content="https://yeony1.github.io/2018/02/13/git01/index.html">
+<meta property="og:site_name" content="Yeony">
+<meta property="og:description" content="# Git?  만든이 : 리눅스의 아버지 리누스 토발즈 프로그램 등의 소스코드 관리를 위한 분산 버전 관리 시스템  # 버전관리란?  VCS (Version Control System) : 버전을 관리하는 시스템 버전관리를 왜 해야 할까? 변경/수정 내용 관리 각 파일을 이전 상태로 복구 가능 시간에 따른 수정 내용 비교 가능 누가 언제 만든 코드인지 파악">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://yeony1.github.io/images/content/imgGit.png">
+<meta property="og:updated_time" content="2018-04-09T08:15:56.773Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Git이란?">
+<meta name="twitter:description" content="# Git?  만든이 : 리눅스의 아버지 리누스 토발즈 프로그램 등의 소스코드 관리를 위한 분산 버전 관리 시스템  # 버전관리란?  VCS (Version Control System) : 버전을 관리하는 시스템 버전관리를 왜 해야 할까? 변경/수정 내용 관리 각 파일을 이전 상태로 복구 가능 시간에 따른 수정 내용 비교 가능 누가 언제 만든 코드인지 파악">
+<meta name="twitter:image" content="https://yeony1.github.io/images/content/imgGit.png">
+    
+
+    
+        <link rel="alternate" href="/" title="Yeony" type="application/atom+xml">
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Yeony&#39;s Blog</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/">Dev</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/Git/">Git</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Life/">Life</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Life/Book/">Book</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Life/Etc/">Etc</a></li></ul></li></ul>
+                                    
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Dev/Git/">Git</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="Dev-git01" class="article article-single article-type-Dev" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Git이란?
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2018/02/13/git01/" class="article-date">
+            <time datetime="2018-02-13T02:26:19.000Z" itemprop="datePublished">2018-02-13</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/git/">git</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h2 id="Git"><a href="#Git" class="headerlink" title="# Git?"></a><a href="#Git?">#</a> Git?</h2><hr>
+<ul>
+<li>만든이 : 리눅스의 아버지 <strong>리누스 토발즈</strong></li>
+<li>프로그램 등의 소스코드 관리를 위한 <strong><code>분산 버전 관리 시스템</code></strong></li>
+</ul>
+<h2 id="버전관리란"><a href="#버전관리란" class="headerlink" title="# 버전관리란?"></a><a href="#버전관리란?">#</a> 버전관리란?</h2><hr>
+<ul>
+<li>VCS (Version Control System) : 버전을 관리하는 시스템</li>
+<li>버전관리를 왜 해야 할까?<ul>
+<li>변경/수정 <strong>내용 관리</strong></li>
+<li>각 파일을 이전 상태로 <strong>복구 가능</strong></li>
+<li>시간에 따른 수정 내용 <strong>비교 가능</strong></li>
+<li>누가 언제 만든 코드인지 <strong>파악 가능</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="SVN-vs-Git"><a href="#SVN-vs-Git" class="headerlink" title="# SVN vs Git"></a><a href="SVN vs Git">#</a> SVN vs Git</h2><hr>
+<p>Git은 위의 설명 처럼, <strong><code>분산 버전 관리 시스템</code></strong>중의 하나이다.<br>버전 관리 시스템에는 <code>로컬 버전관리</code>, <code>중앙집중식 버전관리</code>, <code>분산 버전관리</code> 3가지로 구분된다.</p>
+<h3 id="1-로컬-버전관리"><a href="#1-로컬-버전관리" class="headerlink" title="1. 로컬 버전관리"></a>1. 로컬 버전관리</h3><ul>
+<li>디렉토리로 <strong>파일 복사</strong></li>
+</ul>
+<h3 id="2-중앙집중식-버전관리"><a href="#2-중앙집중식-버전관리" class="headerlink" title="2. 중앙집중식 버전관리"></a>2. 중앙집중식 버전관리</h3><ul>
+<li>소스코드의 <strong>효율적인</strong> 관리</li>
+<li><strong>브랜치</strong> 사용가능</li>
+<li>파일을 관리하는 서버가 별도로 존재</li>
+<li>클라이언트가 <strong>중앙 서버</strong>에서 파일을 받아서 사용(<strong>checkout</strong>)</li>
+</ul>
+<h3 id="3-분산-버전관리"><a href="#3-분산-버전관리" class="headerlink" title="3. 분산 버전관리"></a>3. 분산 버전관리</h3><ul>
+<li>소스크도의 <strong>효율적인 관리</strong></li>
+<li><strong>브랜치</strong> 사용가능</li>
+<li>네트워크나 <strong>중앙서버에 의존X</strong></li>
+<li><strong>SHA1 해시 사용</strong>하여 체크섬(로그)생성</li>
+<li>변동사항 없으면 파일저장X, 이전상태 파일의 링크만 저장</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"><center>로컬 버전관리</center></th>
+<th style="text-align:left"><center>중앙집중식 버전관리</center></th>
+<th style="text-align:left"><center>분산 버전관리</center></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">- 디렉토리로 <strong>파일 복사</strong><br>(ex 날짜순)</td>
+<td style="text-align:left">- 소스코드의 <strong>효율적인 관리</strong><br>- <strong>브랜치</strong> 사용가능</td>
+<td style="text-align:left">- 소스코드의 <strong>효율적인 관리</strong><br>- <strong>브랜치</strong> 사용가능</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">- 파일을 관리하는 서버가<br>별도로 존재<br>- 클라이언트가 <strong>중앙 서버</strong>에서<br>파일을 받아서 사용(<strong>checkout</strong>)</td>
+<td style="text-align:left">- 네트워크나 중앙서버에 의존X<br>- SHA1 해시 사용하여 체크섬(로그)생성<br>- 변동사항 없으면 파일저장X,<br>이전상태 파일의 링크만 저장</td>
+</tr>
+<tr>
+<td style="text-align:left"><img src="/images/content/imgVersion01.jpg" alt=""></td>
+<td style="text-align:left"><img src="/images/content/imgVersion02.png" width="270"></td>
+<td style="text-align:left"><img src="/images/content/imgVersion03.png" width="270"></td>
+</tr>
+</tbody>
+</table>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://yeony1.github.io/2018/02/13/git01/" data-id="cjg65boey0001sehf315hps6y" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="/" target="_blank">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="google-plus" href="/" target="_blank">
+                        <i class="icon fa fa-google-plus"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank" rel="external nofollow noopener noreferrer">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2018/02/17/book01/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            아무것도 아닌 지금은 없다
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2018/01/10/blog-start/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">블로그를 시작하다</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Dev/">Dev</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Dev/Git/">Git</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Life/">Life</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Life/Book/">Book</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Life/Etc/">Etc</a><span class="category-list-count">1</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/book/" style="font-size: 10px;">book</a> <a href="/tags/git/" style="font-size: 10px;">git</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <p>&copy; 2018 Seung-yeon</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'https://yeony1.github.io/2018/02/13/git01/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+
