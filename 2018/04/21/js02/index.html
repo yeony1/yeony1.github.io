@@ -18,7 +18,7 @@
 <meta property="og:description" content="Scope란, 사전적 의미로 범위를 말한다.즉, 변수가 사용되는 범위를 말한다.자바스크립트에서 스코프와 변수는 두가지로 구분할 수 있다. Scope의 종류 전역 스코프 (Global Scope) : 코드 어디에서든지 참조할 수 있다. 지역 스코프 (Local Scope) : 정의된 함수 안에서만 참조할 수 있다.  변수의 종류 전역 변수 : 전역 Scop">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://yeony1.github.io/images/content/imgJavascript.gif">
-<meta property="og:updated_time" content="2018-04-21T04:22:29.077Z">
+<meta property="og:updated_time" content="2018-04-21T07:53:02.092Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="스코프(Scope)">
 <meta name="twitter:description" content="Scope란, 사전적 의미로 범위를 말한다.즉, 변수가 사용되는 범위를 말한다.자바스크립트에서 스코프와 변수는 두가지로 구분할 수 있다. Scope의 종류 전역 스코프 (Global Scope) : 코드 어디에서든지 참조할 수 있다. 지역 스코프 (Local Scope) : 정의된 함수 안에서만 참조할 수 있다.  변수의 종류 전역 변수 : 전역 Scop">
@@ -186,6 +186,11 @@
 <p>하지만, <strong>es6</strong>가 도입되면서 자바스크립트에서도 <code>블록형스코프</code>를 사용할 수 있다.<br><strong>es6</strong>에는 <code>let</code>과 <code>const</code>라는 변수 선언 방식이 새로 추가되었다.<br>위의 str1과 str2를 출력할때와 다르게 <strong>es6</strong>에서 <code>let</code>과 <code>const</code>를 사용하면 블록스코프로 사용할 수 있다.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">let str3 = &quot;es6&quot;;</span><br><span class="line">if(true)&#123;</span><br><span class="line">  let str3 = &quot;variable&quot;;</span><br><span class="line">&#125;</span><br><span class="line">console.log(str3); //es6</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">const str4 = &quot;es6&quot;;</span><br><span class="line">if(true)&#123;</span><br><span class="line">  const str4 = &quot;variable&quot;;</span><br><span class="line">&#125;</span><br><span class="line">console.log(str4); //es6</span><br></pre></td></tr></table></figure>
 <p>앞서 설명한 내용 중, <code>블록형스코프(block-level scope)</code>와 <code>함수형스코프(function-level scope)</code>의 개념이 있다.<br><code>블록형스코프</code>는 코드블록({…})안에서 유효한 Scope를 뜻하고 C나 java와 같은 언어에서 사용된다.<br><code>함수형스코프</code>는 함수코드블록 안에서 선언된 변수만 참조하는 Scope를 뜻하고 함수 외부에서는 참조할 수 없다. 자바스크립트가 대표적인 함수형스코프이다</p>
+<p>[참조]</p>
+<ul>
+<li><a href="http://poiemaweb.com/js-scope" rel="external nofollow noopener noreferrer" target="_blank">http://poiemaweb.com/js-scope</a></li>
+<li>INSIDE JavaScript</li>
+</ul>
 
         </div>
         <footer class="article-footer">
