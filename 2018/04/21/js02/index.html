@@ -3,26 +3,26 @@
 <head>
     <meta charset="utf-8">
     
-    <title>아무것도 아닌 지금은 없다 | Yeony</title>
+    <title>스코프(Scope) | Yeony</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="book">
+        <meta name="keywords" content="javaScript">
     
-    <meta name="description" content="이 책이 처음 나왔을 때부터 읽고 싶었던 책이었다.하지만 계속 지나치다가 어느 날 약속 시각보다 친구가 늦어져 서점에서 이 책을 골라 읽어보았다.오랜만에 너무 재미있고 공감되는 책이라 금세 절반 가까이 읽게 되었다.약속 시각보다 늦은 친구가 왔을 때, 책을 더는 읽지 못한다는 생각에 아쉬웠다.그래서 책을 구매하게 되었다. 최근, 자신감이 많이 떨어져 있던">
-<meta name="keywords" content="book">
+    <meta name="description" content="Scope란, 사전적 의미로 범위를 말한다.즉, 변수가 사용되는 범위를 말한다.자바스크립트에서 스코프와 변수는 두가지로 구분할 수 있다. Scope의 종류 전역 스코프 (Global Scope) : 코드 어디에서든지 참조할 수 있다. 지역 스코프 (Local Scope) : 정의된 함수 안에서만 참조할 수 있다.  변수의 종류 전역 변수 : 전역 Scop">
+<meta name="keywords" content="javaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="아무것도 아닌 지금은 없다">
-<meta property="og:url" content="https://yeony1.github.io/2018/02/17/book01/index.html">
+<meta property="og:title" content="스코프(Scope)">
+<meta property="og:url" content="https://yeony1.github.io/2018/04/21/js02/index.html">
 <meta property="og:site_name" content="Yeony">
-<meta property="og:description" content="이 책이 처음 나왔을 때부터 읽고 싶었던 책이었다.하지만 계속 지나치다가 어느 날 약속 시각보다 친구가 늦어져 서점에서 이 책을 골라 읽어보았다.오랜만에 너무 재미있고 공감되는 책이라 금세 절반 가까이 읽게 되었다.약속 시각보다 늦은 친구가 왔을 때, 책을 더는 읽지 못한다는 생각에 아쉬웠다.그래서 책을 구매하게 되었다. 최근, 자신감이 많이 떨어져 있던">
+<meta property="og:description" content="Scope란, 사전적 의미로 범위를 말한다.즉, 변수가 사용되는 범위를 말한다.자바스크립트에서 스코프와 변수는 두가지로 구분할 수 있다. Scope의 종류 전역 스코프 (Global Scope) : 코드 어디에서든지 참조할 수 있다. 지역 스코프 (Local Scope) : 정의된 함수 안에서만 참조할 수 있다.  변수의 종류 전역 변수 : 전역 Scop">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://yeony1.github.io/images/content/imgBook01_1.jpg">
-<meta property="og:updated_time" content="2018-04-09T08:15:56.786Z">
+<meta property="og:image" content="https://yeony1.github.io/images/content/imgJavascript.gif">
+<meta property="og:updated_time" content="2018-04-21T04:22:29.077Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="아무것도 아닌 지금은 없다">
-<meta name="twitter:description" content="이 책이 처음 나왔을 때부터 읽고 싶었던 책이었다.하지만 계속 지나치다가 어느 날 약속 시각보다 친구가 늦어져 서점에서 이 책을 골라 읽어보았다.오랜만에 너무 재미있고 공감되는 책이라 금세 절반 가까이 읽게 되었다.약속 시각보다 늦은 친구가 왔을 때, 책을 더는 읽지 못한다는 생각에 아쉬웠다.그래서 책을 구매하게 되었다. 최근, 자신감이 많이 떨어져 있던">
-<meta name="twitter:image" content="https://yeony1.github.io/images/content/imgBook01_1.jpg">
+<meta name="twitter:title" content="스코프(Scope)">
+<meta name="twitter:description" content="Scope란, 사전적 의미로 범위를 말한다.즉, 변수가 사용되는 범위를 말한다.자바스크립트에서 스코프와 변수는 두가지로 구분할 수 있다. Scope의 종류 전역 스코프 (Global Scope) : 코드 어디에서든지 참조할 수 있다. 지역 스코프 (Local Scope) : 정의된 함수 안에서만 참조할 수 있다.  변수의 종류 전역 변수 : 전역 Scop">
+<meta name="twitter:image" content="https://yeony1.github.io/images/content/imgJavascript.gif">
     
 
     
@@ -135,18 +135,18 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/Life/">Life</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Life/Book/">Book</a>
+    <a class="page-title-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Dev/javaScript/">javaScript</a>
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-book01" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
+                            <article id="post-js02" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        아무것도 아닌 지금은 없다
+        스코프(Scope)
         </h1>
     
 
@@ -156,30 +156,36 @@
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2018/02/17/book01/" class="article-date">
-            <time datetime="2018-02-17T09:04:34.000Z" itemprop="datePublished">2018-02-17</time>
+        <a href="/2018/04/21/js02/" class="article-date">
+            <time datetime="2018-04-21T02:18:26.000Z" itemprop="datePublished">2018-04-21</time>
         </a>
     </div>
 
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/book/">book</a>
+        <a class="tag-link" href="/tags/javaScript/">javaScript</a>
     </div>
 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p><img src="/images/content/imgBook01.jpg" width="400"></p>
-<p>이 책이 처음 나왔을 때부터 읽고 싶었던 책이었다.<br>하지만 계속 지나치다가 어느 날 약속 시각보다 친구가 늦어져 서점에서 이 책을 골라 읽어보았다.<br>오랜만에 너무 재미있고 공감되는 책이라 금세 절반 가까이 읽게 되었다.<br>약속 시각보다 늦은 친구가 왔을 때, 책을 더는 읽지 못한다는 생각에 아쉬웠다.<br>그래서 책을 구매하게 되었다.</p>
-<p>최근, 자신감이 많이 떨어져 있던 내게 많은 용기와 힘을 북돋아 주는 책이었다.<br>가장 기억에 남는 문구는 아래와 같다.</p>
-<blockquote>
-<p>기억하자.</p>
-<p>당신이 지금 여기까지 올 수 있었던 건<br>잘하지 못한 일들을<br>당신 스스로 하나씩 해냈기 때문이라는 걸.</p>
-</blockquote>
-<p><img src="/images/content/imgBook01_2.jpg" width="400"></p>
-<p>이 글을 읽었을 때 많은 위로를 받고 힘을 받았다.<br>그동안 나는 나 자신을 너무 매몰차게만 대하고 아껴주지 못했던 것 같다는 생각이 들었다.<br>나 자신을 조금 더 배려하고 하찮지 않게 대해야겠다.</p>
+            <hr>
+<p><strong><code>Scope</code></strong>란, 사전적 의미로 <code>범위</code>를 말한다.<br>즉, <strong>변수가 사용되는 범위</strong>를 말한다.<br>자바스크립트에서 스코프와 변수는 두가지로 구분할 수 있다.</p>
+<h3 id="Scope의-종류"><a href="#Scope의-종류" class="headerlink" title="Scope의 종류"></a>Scope의 종류</h3><ul>
+<li>전역 스코프 (Global Scope) : 코드 어디에서든지 참조할 수 있다.</li>
+<li>지역 스코프 (Local Scope) : 정의된 함수 안에서만 참조할 수 있다.</li>
+</ul>
+<h3 id="변수의-종류"><a href="#변수의-종류" class="headerlink" title="변수의 종류"></a>변수의 종류</h3><ul>
+<li>전역 변수 : 전역 Scope를 갖는 변수.</li>
+<li>지역 변수 : 지역 Scope를 갖는 변수.</li>
+</ul>
+<p>변수는 선언되는 위치에 의해서 Scope를 갖게된다. 전역에 선언된 전역변수는 전역 스코프를 갖고, 지역에 선언된 지역변수는 지역 스코프를 갖는다.<br>전역 스코프를 갖은 전역변수는 코드 어디에서든지 참조할 수 있고, 지역 스코프를 갖은 지역변수는 정의된 함수 안에서만 참조할 수 있다.</p>
+<p>아래의 코드로 이해해보자.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">var str1 = &quot;Hello&quot;;</span><br><span class="line">if(true)&#123;</span><br><span class="line">  var str1 = &quot;world&quot;;</span><br><span class="line">&#125;</span><br><span class="line">console.log(str1); //world</span><br><span class="line">/*</span><br><span class="line">Hello가 출력될 것 같지만,</span><br><span class="line">자바스크립트는 함수형스코프이므로</span><br><span class="line">함수코드블록 안에 선언된 변수만 참조할 수 있기 때문이다.</span><br><span class="line">즉, 변수 str1은 전역변수이고 전역스코프 이므로 world가 출력된다.</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">var str2 = &quot;java&quot;;</span><br><span class="line">function scope()&#123;</span><br><span class="line">  var str2 = &quot;script&quot;;</span><br><span class="line">&#125;</span><br><span class="line">console.log(str2); //java</span><br><span class="line">/*</span><br><span class="line">함수밖에 있는 str2 변수는 전역변수이고 함수안에 있는 str2 변수는 지역변수이다.</span><br><span class="line">함수안에서 console.log을 찍었다면 script가 출력될 것이다.</span><br><span class="line">*/</span><br></pre></td></tr></table></figure></p>
+<p>하지만, <strong>es6</strong>가 도입되면서 자바스크립트에서도 <code>블록형스코프</code>를 사용할 수 있다.<br><strong>es6</strong>에는 <code>let</code>과 <code>const</code>라는 변수 선언 방식이 새로 추가되었다.<br>위의 str1과 str2를 출력할때와 다르게 <strong>es6</strong>에서 <code>let</code>과 <code>const</code>를 사용하면 블록스코프로 사용할 수 있다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">let str3 = &quot;es6&quot;;</span><br><span class="line">if(true)&#123;</span><br><span class="line">  let str3 = &quot;variable&quot;;</span><br><span class="line">&#125;</span><br><span class="line">console.log(str3); //es6</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">const str4 = &quot;es6&quot;;</span><br><span class="line">if(true)&#123;</span><br><span class="line">  const str4 = &quot;variable&quot;;</span><br><span class="line">&#125;</span><br><span class="line">console.log(str4); //es6</span><br></pre></td></tr></table></figure>
+<p>앞서 설명한 내용 중, <code>블록형스코프(block-level scope)</code>와 <code>함수형스코프(function-level scope)</code>의 개념이 있다.<br><code>블록형스코프</code>는 코드블록({…})안에서 유효한 Scope를 뜻하고 C나 java와 같은 언어에서 사용된다.<br><code>함수형스코프</code>는 함수코드블록 안에서 선언된 변수만 참조하는 Scope를 뜻하고 함수 외부에서는 참조할 수 없다. 자바스크립트가 대표적인 함수형스코프이다</p>
 
         </div>
         <footer class="article-footer">
@@ -187,7 +193,7 @@
 
 
 
-    <a data-url="https://yeony1.github.io/2018/02/17/book01/" data-id="cjg8woe9i0005hphfba2g1s98" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://yeony1.github.io/2018/04/21/js02/" data-id="cjg8woe9a0004hphfbm2ldop6" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -308,20 +314,10 @@
         
 <nav id="article-nav">
     
-        <a href="/2018/04/19/js01/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            호이스팅(Hoisting)
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2018/02/13/git01/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2018/04/19/js01/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">Git이란?</p>
+        <p class="article-nav-title">호이스팅(Hoisting)</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -400,7 +396,7 @@
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'https://yeony1.github.io/2018/02/17/book01/';
+    var disqus_url = 'https://yeony1.github.io/2018/04/21/js02/';
     
     (function() {
     var dsq = document.createElement('script');
